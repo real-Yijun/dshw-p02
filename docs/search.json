@@ -1,0 +1,172 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "P01: 金融数据获取、管理与初步分析",
+    "section": "",
+    "text": "1 封面\n本电子书对应课程作业 P01，围绕金融数据从获取到分析的完整流程组织内容。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>封面</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#阅读说明",
+    "href": "index.html#阅读说明",
+    "title": "P01: 金融数据获取、管理与初步分析",
+    "section": "1.1 阅读说明",
+    "text": "1.1 阅读说明\n\n第 1 章给出项目背景和整体结构。\n第 2 章聚焦数据下载与数据源口径。\n第 3 章聚焦清洗、格式转换和合并策略。\n第 4 章展示统计结果、图表和回归分析结论。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>封面</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#作业完成度",
+    "href": "index.html#作业完成度",
+    "title": "P01: 金融数据获取、管理与初步分析",
+    "section": "1.2 作业完成度",
+    "text": "1.2 作业完成度\n\n数据获取: 10 只股票 + 指数 + 宏观 + 财务指标\n数据管理: CSV 主链路 + Parquet 对比\n数据清洗: 缺失、类型、去重、离群标注、宽长表、合并\n分析输出: 描述统计 + 图 1-7 + CAPM + 宏观回归",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>封面</span>"
+    ]
+  },
+  {
+    "objectID": "book/01-overview.html",
+    "href": "book/01-overview.html",
+    "title": "2  项目总览",
+    "section": "",
+    "text": "2.1 研究目标\n本项目目标是建立一条可复现、可追溯的金融数据分析链路，而不是仅完成单点代码运行。\n研究问题包括:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>项目总览</span>"
+    ]
+  },
+  {
+    "objectID": "book/01-overview.html#研究目标",
+    "href": "book/01-overview.html#研究目标",
+    "title": "2  项目总览",
+    "section": "",
+    "text": "不同行业股票的收益风险特征有何差异。\n市场因子对个股收益解释力是否一致。\n单一宏观变量对个股月收益是否存在稳定影响。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>项目总览</span>"
+    ]
+  },
+  {
+    "objectID": "book/01-overview.html#项目结构",
+    "href": "book/01-overview.html#项目结构",
+    "title": "2  项目总览",
+    "section": "2.2 项目结构",
+    "text": "2.2 项目结构\ndshw-p01/\n├── 01_download.ipynb\n├── 02_clean.ipynb\n├── 03_analysis.ipynb\n├── data/\n├── output/\n└── report.html",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>项目总览</span>"
+    ]
+  },
+  {
+    "objectID": "book/01-overview.html#股票与行业覆盖",
+    "href": "book/01-overview.html#股票与行业覆盖",
+    "title": "2  项目总览",
+    "section": "2.3 股票与行业覆盖",
+    "text": "2.3 股票与行业覆盖\n\n银行: 招商银行、工商银行\n汽车: 比亚迪、广汽集团\n房地产: 万科 A\n白酒: 贵州茅台\n能源: 中国石油、中国海油\n通讯: 中兴通讯\n物流: 顺丰控股",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>项目总览</span>"
+    ]
+  },
+  {
+    "objectID": "book/02-download.html",
+    "href": "book/02-download.html",
+    "title": "3  数据获取与口径",
+    "section": "",
+    "text": "3.1 数据来源",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据获取与口径</span>"
+    ]
+  },
+  {
+    "objectID": "book/02-download.html#数据来源",
+    "href": "book/02-download.html#数据来源",
+    "title": "3  数据获取与口径",
+    "section": "",
+    "text": "股票行情: akshare 后复权日频\n指数: 沪深 300 和中证 500\n宏观: CPI 同比 + M2 同比\n财务: 最近 5 个完整年度的 ROE 等指标",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据获取与口径</span>"
+    ]
+  },
+  {
+    "objectID": "book/02-download.html#下载机制",
+    "href": "book/02-download.html#下载机制",
+    "title": "3  数据获取与口径",
+    "section": "3.2 下载机制",
+    "text": "3.2 下载机制\n下载流程采用“主接口 + 备用接口 + 重试 + 随机延时 + 日志”的稳健策略，结果记录于 download_log.txt。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据获取与口径</span>"
+    ]
+  },
+  {
+    "objectID": "book/02-download.html#输出数据目录",
+    "href": "book/02-download.html#输出数据目录",
+    "title": "3  数据获取与口径",
+    "section": "3.3 输出数据目录",
+    "text": "3.3 输出数据目录\n\ndata/stock/: 个股日度原始数据\ndata/index/: 指数数据\ndata/macro/: 宏观月度数据\ndata/finance/: 财务长格式数据",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据获取与口径</span>"
+    ]
+  },
+  {
+    "objectID": "book/03-clean.html",
+    "href": "book/03-clean.html",
+    "title": "4  数据清洗与整合",
+    "section": "",
+    "text": "4.1 清洗步骤",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>数据清洗与整合</span>"
+    ]
+  },
+  {
+    "objectID": "book/03-clean.html#清洗步骤",
+    "href": "book/03-clean.html#清洗步骤",
+    "title": "4  数据清洗与整合",
+    "section": "",
+    "text": "缺失值检测与必要填补\n日期与代码字段标准化\n重复记录去除\n离群收益率标注\n宽表与长表互转\n多表按键合并并核对行数变化",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>数据清洗与整合</span>"
+    ]
+  },
+  {
+    "objectID": "book/03-clean.html#存储策略",
+    "href": "book/03-clean.html#存储策略",
+    "title": "4  数据清洗与整合",
+    "section": "4.2 存储策略",
+    "text": "4.2 存储策略\n\n基础格式: CSV\n进阶格式: Parquet\n\n在本项目规模下，Parquet 在列式读取和类型稳定性方面更适合后续扩展。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>数据清洗与整合</span>"
+    ]
+  },
+  {
+    "objectID": "book/04-analysis.html",
+    "href": "book/04-analysis.html",
+    "title": "5  统计、可视化与回归结果",
+    "section": "",
+    "text": "5.1 关键图表",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>统计、可视化与回归结果</span>"
+    ]
+  },
+  {
+    "objectID": "book/04-analysis.html#关键图表",
+    "href": "book/04-analysis.html#关键图表",
+    "title": "5  统计、可视化与回归结果",
+    "section": "",
+    "text": "5.1.1 图 1: 归一化收盘价走势\n\n\n\n5.1.2 图 2: 日对数收益率分布\n\n\n\n5.1.3 图 3: 收益率相关系数热力图\n\n\n\n5.1.4 图 4: CPI 与沪深 300 月收益关系\n\n\n\n5.1.5 图 5: 近 5 年 ROE 对比\n\n\n\n5.1.6 图 6: CAPM Beta 估计\n\n\n\n5.1.7 图 7: CPI 宏观敏感性",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>统计、可视化与回归结果</span>"
+    ]
+  },
+  {
+    "objectID": "book/04-analysis.html#分析结论",
+    "href": "book/04-analysis.html#分析结论",
+    "title": "5  统计、可视化与回归结果",
+    "section": "5.2 分析结论",
+    "text": "5.2 分析结论\n\n不同行业个股在收益波动和相关性上存在明显异质性。\nCAPM 对不同股票解释力差异显著，单因子模型可作为基准但并不充分。\nCPI 单变量回归整体解释力偏低，方向可讨论但强结论需更多控制变量。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>统计、可视化与回归结果</span>"
+    ]
+  }
+]

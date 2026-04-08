@@ -12,7 +12,7 @@ book:
     - book/01-overview.qmd
     - book/02-download.qmd
     - book/03-clean.qmd
-    - book/04-analysis.qmd
+    - 03_analysis.ipynb
 
 format:
   html:
@@ -25,6 +25,7 @@ format:
     code-tools: false
 
 execute:
+  enabled: false
   freeze: false
   echo: false
   warning: false

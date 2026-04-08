@@ -1,0 +1,8 @@
+﻿metric,value
+n_total_stocks,10
+n_beta_gt_1,3
+n_alpha_sig_5pct,2
+max_R_squared_stock,贵州茅台
+max_R_squared_value,0.4417978931679719
+min_R_squared_stock,工商银行
+min_R_squared_value,0.06602778698793188

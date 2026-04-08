@@ -37,3 +37,9 @@ dist/
 .DS_Store
 .idea/
 .vscode/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Quarto/GitHub Pages generated site artifacts
+docs/

@@ -20,7 +20,6 @@ jobs:
 
       - name: Render book
         run: |
-          quarto check
           quarto render
 
       - name: Publish to gh-pages branch

@@ -22,13 +22,10 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
-    smooth-scroll: true
-    code-fold: show
-    code-summary: "显示代码"
-    link-external-newwindow: true
+    code-tools: false
 
 execute:
-  freeze: auto
+  freeze: false
   echo: false
   warning: false
   message: false
